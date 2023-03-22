@@ -14,14 +14,19 @@
   margin: 0 20px;
 }
 
-.optionLocation {
+.header__location {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-end;
   color: #fff;
 }
 
-.header__location {
-  margin: auto;
+.header__optionLocation {
+  display: flex;
+  flex-direction: column;
+  
+  margin-right: 5px;
+  color: #fff;
 }
 
 .header__search {

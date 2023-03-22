@@ -10,11 +10,11 @@ function Header() {
     <div className="header">
       <img src="https://amazon-blogs-brightspot-lower.s3.amazonaws.com/about/a9/af/27a4ef844ac38129d0fa460675fb/amazon-logo.svg" alt="" className="header__logo" />
 
-      <div className="header__option">
-        <span className="header__optionLineOne">Deliver to</span>
-        <div className="optionLocation">
-          <LocationOnOutlinedIcon />
-          <span className="header__optionLineTwo header__location">Malaysia</span>
+      <div className="header__location">
+        <LocationOnOutlinedIcon />
+        <div className="header__optionLocation">
+          <span className="header__optionLineOne">Deliver to</span>
+          <span className="header__optionLineTwo">Malaysia</span>
         </div>
         
       </div>

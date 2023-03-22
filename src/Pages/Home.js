@@ -3,6 +3,7 @@ import './Home.css'
 import Product from "../Components/Product";
 
 function Home() {
+
   return (
     <div className="home">
       <div className="home__container">
@@ -65,7 +66,7 @@ function Home() {
       </div>
 
     </div>
-    )
+  )
 }
 
 export default Home;
