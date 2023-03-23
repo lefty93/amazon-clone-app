@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import './Header.css'
 import { useStateValue } from '../Context/StateProvider';
 // import { StateContext } from '../Context/StateProvider';
+import { Link } from "react-router-dom";
 
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -15,8 +16,10 @@ function Header() {
   console.log(basket)
   return (
     <div className="header">
-      <img src="https://amazon-blogs-brightspot-lower.s3.amazonaws.com/about/a9/af/27a4ef844ac38129d0fa460675fb/amazon-logo.svg" alt="" className="header__logo" />
-
+      <Link to='/'>
+        <img src="https://amazon-blogs-brightspot-lower.s3.amazonaws.com/about/a9/af/27a4ef844ac38129d0fa460675fb/amazon-logo.svg" alt="" className="header__logo" />
+      </Link>
+      
       <div className="header__location">
         <LocationOnOutlinedIcon />
         <div className="header__optionLocation">
@@ -47,9 +50,11 @@ function Header() {
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
         </div>
-
+        
         <div className="header__optionBasket">
-          <ShoppingCartOutlinedIcon />
+          <Link to='/checkout' className="header__basketIcon">
+            <ShoppingCartOutlinedIcon />
+          </Link>
           <span className="header__optionLineTwo header__basketCount">{basket?.length}</span>
         </div>
         

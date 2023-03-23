@@ -77,6 +77,10 @@
   color: #fff;
 }
 
+.header__basketIcon {
+  color: #fff;
+}
+
 .header__basketCount {
   display: flex;
   width: 25px;
