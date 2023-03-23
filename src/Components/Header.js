@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './Header.css'
+import { useStateValue } from '../Context/StateProvider';
+// import { StateContext } from '../Context/StateProvider';
 
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
+
+
 function Header() {
+  // const [{ basket }, dispatch] = useContext(StateContext)
+  const [{basket}, dispatch] = useStateValue()
+  console.log(basket)
   return (
     <div className="header">
       <img src="https://amazon-blogs-brightspot-lower.s3.amazonaws.com/about/a9/af/27a4ef844ac38129d0fa460675fb/amazon-logo.svg" alt="" className="header__logo" />
@@ -20,7 +27,7 @@ function Header() {
       </div>
 
       <div className="header__search">
-        <input type="text" className="header__searchInput" />
+        <input type="text" className="header__searchInput" placeholder='Search'/>
         <SearchIcon className="header__searchIcon" />
       </div>
 
@@ -43,7 +50,7 @@ function Header() {
 
         <div className="header__optionBasket">
           <ShoppingCartOutlinedIcon />
-          <span className="header__optionLineTwo header__baskerCount">0</span>
+          <span className="header__optionLineTwo header__basketCount">{basket?.length}</span>
         </div>
         
       </div>

@@ -24,7 +24,7 @@
 .header__optionLocation {
   display: flex;
   flex-direction: column;
-  
+
   margin-right: 5px;
   color: #fff;
 }
@@ -78,6 +78,9 @@
 }
 
 .header__basketCount {
-  margin-left: 10px;
-  margin-right: 10px;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  overflow: auto;
+  align-items: center;
 }
