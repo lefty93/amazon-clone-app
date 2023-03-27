@@ -1,8 +1,8 @@
 
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import "./Login.css"
 import { Link } from 'react-router-dom'
-import {auth} from '../firebase'
+import { auth } from '../firebase'
 
 function Login() {
   const [email, setEmail] = useState()
@@ -48,14 +48,6 @@ function Login() {
 
       </div>
     </div>
-
-import React from 'react'
-import './Login.css'
-
-function Login() {
-  return (
-    <div>Login</div>
-
   )
 }
 
