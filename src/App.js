@@ -4,10 +4,6 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Checkout from "./Pages/Checkout";
 
-import Login from "./Pages/Login";
-import Header from "../src/Components/Header"
-
-
 function App() {
   return (
     <div className='App'>
