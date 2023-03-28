@@ -10,6 +10,12 @@ export const getBasketTotal = (basket) =>
 function reducer(state, action) {
     console.log(action)
     switch (action.type) {
+        case "SET_USER":
+            return {
+                ...state,
+                user: action.user,
+            }
+
         case "ADD_TO_BASKET":
             // Logic for adding item to basket
             return {
@@ -32,7 +38,7 @@ function reducer(state, action) {
             } else {
                 console.warn(`Cant remove product ${action.id}`)
             }
-            return {...state, basket: newBasket};
+            return { ...state, basket: newBasket };
 
         default:
             return state;

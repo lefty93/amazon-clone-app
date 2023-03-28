@@ -1,19 +1,33 @@
 
 import React, { useState } from 'react'
 import "./Login.css"
-import { Link } from 'react-router-dom'
-import { auth } from '../firebase'
+import { Link, useNavigate } from 'react-router-dom'
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
 
 function Login() {
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const auth = getAuth()
+  const navigate = useNavigate();
 
   const login = event => {
     event.preventDefault();
+    signInWithEmailAndPassword(auth, email, password).then(() => {
+      // logged in, redirect to homepage
+      navigate('/')
+    })
+      .catch((e) => alert(e.message));
   }
 
   const register = event => {
     event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password).then(() => {
+      // register, and redirect to homepage
+      navigate('/')
+    })
+      .catch((e) => alert(e.message));
+
   }
 
   return (
@@ -29,9 +43,9 @@ function Login() {
         <h1>Sign in</h1>
         <form action="">
           <h5>E-mail</h5>
-          <input type="text" />
+          <input type="text" onChange={event => setEmail(event.target.value)} value={email} />
           <h5>Password</h5>
-          <input type="password" />
+          <input type="password" onChange={event => setPassword(event.target.value)} value={password} />
           <button className="login__signInButton" onClick={login}>Sign in</button>
         </form>
 

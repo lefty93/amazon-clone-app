@@ -71,6 +71,11 @@
   font-weight: 800;
 }
 
+.header__loginOption {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header__optionBasket {
   display: flex;
   align-items: center;
